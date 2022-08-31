@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+
+import  CustomizedAccordions from './p.js';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  withRouter,
+} from "react-router-dom";
+import Card from './Card.js';
+import Navbar from './Navbar.js';
+import Science from './Science.js';
+import English from './English.js';
+import Maths from './Maths.js';
+// import { } from './Accordion';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router> <div className="App">
+      <Navbar/>
+     
+        <Routes>
+        <Route exact path="/acc" key={CustomizedAccordions} element={CustomizedAccordions}/>
+        <Route exact path="/" key={Card} element={<Card/>}/>
+        <Route exact path="/Maths.js" key={Maths} element={<Maths/>}/>
+        {/* <Route exact path="/English.js" key={English} element={<English/>}/>
+        <Route exact path="/Science.js" key={Science} element={<Science/>}/> */}
+          
+        </Routes>
+      
+      
     </div>
+    </Router>
   );
 }
 
